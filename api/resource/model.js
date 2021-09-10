@@ -4,7 +4,6 @@ const db = require('./../../data/dbConfig');
 function getResources(){
     return db('resources')
 }
-
 //POST
 async function addResources(newResource){
       const [resource_id] = await db('resources').insert(newResource)
@@ -13,5 +12,4 @@ async function addResources(newResource){
       .first()
      
 }
-
 module.exports = {getResources,addResources}

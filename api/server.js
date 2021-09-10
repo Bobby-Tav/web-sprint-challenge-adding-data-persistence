@@ -6,10 +6,12 @@ const resourceRouter = require('./resource/router')
 const projectRouter = require('./project/router')
 const taskRouter = require('./task/router')
 const helmet = require('helmet')
+const cors = require('cors')
 
 const server = express()
 
 server.use(helmet());
+server.use(cors());
 server.use(express.json());
 
 server.use('/api/resources',resourceRouter)
